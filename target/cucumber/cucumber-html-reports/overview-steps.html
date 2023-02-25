@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>24 Feb 2023, 11:50</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.cydeo.step_definition.Hooks.teardownScenario(io.cucumber.java.Scenario)</td>
+              <td>11</td>
+              <td class="duration" data-value="651337754">0.651</td>
+              <td class="duration" data-value="651337754">0.665</td>
+              <td class="duration" data-value="7164715300">7.164</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.userEntersQuantity(int)</td>
+              <td>11</td>
+              <td class="duration" data-value="51508454">0.051</td>
+              <td class="duration" data-value="51508454">0.063</td>
+              <td class="duration" data-value="566593000">0.566</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_enters_city(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="56732054">0.056</td>
+              <td class="duration" data-value="56732054">0.061</td>
+              <td class="duration" data-value="624052600">0.624</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_enters_credit_card_number(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="64951118">0.064</td>
+              <td class="duration" data-value="64951118">0.067</td>
+              <td class="duration" data-value="714462300">0.714</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_enters_credit_card_type(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="87352472">0.087</td>
+              <td class="duration" data-value="87352472">0.096</td>
+              <td class="duration" data-value="960877200">0.960</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_enters_customer_name(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="59929881">0.059</td>
+              <td class="duration" data-value="59929881">0.070</td>
+              <td class="duration" data-value="659228700">0.659</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_enters_expire_date(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="52506736">0.052</td>
+              <td class="duration" data-value="52506736">0.056</td>
+              <td class="duration" data-value="577574100">0.577</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_enters_process_order_button()</td>
+              <td>11</td>
+              <td class="duration" data-value="61471881">0.061</td>
+              <td class="duration" data-value="61471881">0.066</td>
+              <td class="duration" data-value="676190700">0.676</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_enters_state(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="50438700">0.050</td>
+              <td class="duration" data-value="50438700">0.065</td>
+              <td class="duration" data-value="554825700">0.554</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_enters_street(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="57784436">0.057</td>
+              <td class="duration" data-value="57784436">0.064</td>
+              <td class="duration" data-value="635628800">0.635</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_enters_zip(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="52689772">0.052</td>
+              <td class="duration" data-value="52689772">0.064</td>
+              <td class="duration" data-value="579587500">0.579</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_is_already_logged_in_an_order_page()</td>
+              <td>11</td>
+              <td class="duration" data-value="2711294736">2.711</td>
+              <td class="duration" data-value="2711294736">4.049</td>
+              <td class="duration" data-value="29824242100">29.824</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_selects_product_type(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="91348509">0.091</td>
+              <td class="duration" data-value="91348509">0.118</td>
+              <td class="duration" data-value="1004833600">1.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.cydeo.step_definition.WeTableOrder_StepDefinitions.user_should_see_in_first_row_of_the_table(java.lang.String)</td>
+              <td>11</td>
+              <td class="duration" data-value="25561354">0.025</td>
+              <td class="duration" data-value="25561354">0.036</td>
+              <td class="duration" data-value="281174900">0.281</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>14</td>
+            <td>154</td>
+            <td class="duration">0.291</td>
+            <td class="duration">29.824</td>
+            <td class="duration">44.823</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
